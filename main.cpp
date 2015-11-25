@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 	if (!joystick.isFound())
 	{
 		cout << "Can't find the joystick." << endl;
-		exit(1);
+		return EXIT_FAILURE;
 	}
 	
 	bool led = false;
@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 			// Button 4 : Switch on / off the LED
 			if (event.isButton())
 			{
-				if(event.number == 4) {
+				if(event.number == 4) { // Button 4 : control the LED
 					if(event.value != 0 && led == false) {
 						arm.ctrl(LED, RUN1);
 						led = true;
@@ -47,6 +47,10 @@ int main(int argc, char** argv)
 						arm.ctrl(LED, STOP);
 						led = false;
 					}
+				}
+				else if(event.number == 5) { // Button 5 : exit the program
+					if(event.value != 0)
+						return EXIT_SUCCESS;
 				}
 			}
 			else if (event.isAxis())

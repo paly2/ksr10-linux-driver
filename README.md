@@ -17,6 +17,26 @@ You can now control the KSR10 with your joystick.
 
 You can also just copy the `robotic_arm.h` and `robotic_arm.cpp` files in your own program (see `Driver API` part).
 
+### Use the XBox joystick
+
+This picture represents the layout of the XBox 360 Controller (found [here](https://love2d.org/w/images/d/d4/360_controller.png) ) :
+
+![XBox controller](https://love2d.org/w/images/d/d4/360_controller.png)
+
+If you use this joystick to control the KSR10, commands are :
+* Left stick up : shoulder down
+* Left stick down : shoulder up
+* Left stick right : base left
+* Left stick left : base right
+* Right stick up : elbow down
+* Right stick down : elbow up
+* Right stick right : wrist up
+* Right stick left : wrist down
+* Left trigger pressed : grip close
+* Right trigger pressed : grip open
+* Left bumper : light on/off
+* Right bumper : exit the program
+
 ### Driver API
 
 First, create an instance of ksr10 :  

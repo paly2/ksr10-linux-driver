@@ -3,7 +3,7 @@
 This is a (very) small library that allows you to control a KSR10 with C++.
 
 Note : every commands of the demonstration program (in the file `main.cpp`) are designed for a "XBox 360 controller" joystick. You can of course change them in the `main.cpp` file for your own joystick.  
-Other note : The joystick library was found [https://github.com/drewnoakes/joystick/](here).
+Other note : The joystick library was found [here](https://github.com/drewnoakes/joystick/).
 
 ### How to compile it ?
 
@@ -15,7 +15,7 @@ Type these commands in a console :
 `sudo ./ksr10 # To run the program.`  
 You can now control the KSR10 with your joystick.
 
-You can also just copy the `robotic_arm.h` and `robotic_arm.cpp` files in your own program to use this driver as a library (see the `Driver API` part).
+You can also just copy the `robotic_arm.h` and `robotic_arm.cpp` files in your own program (see `Driver API` part).
 
 ### Driver API
 
@@ -32,10 +32,11 @@ Available commands are :
 - `GRIP`
 - `BASE`
 - `LED`
-And available status are :
+
+And avaible status are :
 - `STOP`
 - `RUN1`
-- `RUN2`
+- `RUN2`  
 Note : you can't use the `RUN2` status for the LED.
 
 Example :  

@@ -28,7 +28,7 @@ ksr10::ksr10() {
 int ksr10::ctrl(command cmd, status nstatus) {
 	if(cmd == LED && nstatus == RUN2) {
 		cout << "The LED can't have the RUN2 status (STOP = light off, RUN1 = light on)." << endl;
-		return -1;
+		return 1;
 	}
 	unsigned char bytes[3] = {0};
 	stat[cmd] = nstatus;
@@ -39,6 +39,8 @@ int ksr10::ctrl(command cmd, status nstatus) {
 }
 
 ksr10::~ksr10() {
+	for(int i = 0 ; i < 6 ; i++) // Stop all movements
+		ctrl((command)i, STOP);
 	libusb_close(dh);
 	libusb_exit(NULL);		
 }
